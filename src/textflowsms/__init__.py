@@ -10,6 +10,8 @@ class SendMessageData:
         self.timestamp:int = obj["timestamp"]
     def __str__(self) -> str:
         return json.dumps(self.__dict__)
+    def toJson(self):
+        return json.dumps(self.__dict__)
 
 class SendMessageResult:
     def __init__(self, obj):
@@ -19,6 +21,8 @@ class SendMessageResult:
         if(self.ok):
             self.data:SendMessageData = SendMessageData(obj["data"])
     def __str__(self) -> str:
+        return json.dumps(self.__dict__)
+    def toJson(self):
         return json.dumps(self.__dict__)
 
 

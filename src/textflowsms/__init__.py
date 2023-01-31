@@ -8,6 +8,8 @@ class SendMessageData:
         self.country_code:str = obj["country_code"]
         self.price:float = obj["price"]
         self.timestamp:int = obj["timestamp"]
+    def __str__(self) -> str:
+        return json.dumps(self.__dict__)
 
 class SendMessageResult:
     def __init__(self, obj):
@@ -16,6 +18,8 @@ class SendMessageResult:
         self.message:str = obj["message"]
         if(self.ok):
             self.data:SendMessageData = SendMessageData(obj["data"])
+    def __str__(self) -> str:
+        return json.dumps(self.__dict__)
 
 
 apiKey:str = ""

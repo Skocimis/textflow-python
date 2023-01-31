@@ -3,6 +3,17 @@
 [![PyPI](https://img.shields.io/pypi/v/textflowsms.svg)](https://pypi.python.org/pypi/textflowsms)
 [![PyPI](https://img.shields.io/pypi/pyversions/textflowsms.svg)](https://pypi.python.org/pypi/textflowsms)
 
+### Supported Python Versions
+
+This library supports the following Python implementations:
+
+* Python 3.6
+* Python 3.7
+* Python 3.8
+* Python 3.9
+* Python 3.10
+* Python 3.11
+
 ## Installation
 `pip install textflowsms`
 

@@ -16,13 +16,13 @@ To send an SMS, you have to create an API key using the [Textflow dashboard](htt
 import textflowsms as tf
 tf.useKey("YOUR_API_KEY");
 
-textflow.sendSMS("+381611231234", "Dummy message text...")
+tf.sendSMS("+381611231234", "Dummy message text...")
 ```
 
 ### Handle send message request result
 
 ```python
-result = textflow.sendSMS("+381611231234", "Dummy message text...")
+result = tf.sendSMS("+381611231234", "Dummy message text...")
 if(result.ok):
   print(result.data)
 else:

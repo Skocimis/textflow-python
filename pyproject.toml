@@ -4,21 +4,27 @@ build-backend = "hatchling.build"
 
 [project]
 name = "textflowsms"
-version = "0.0.2"
+version = "0.0.5"
+description = "Python library that helps you send SMS using TextFlow API"
+license = "MIT"
+authors = [
+  { name="TextFlow", email="admin@textflow.me" },
+]
+readme = "README.md"
+homepage = "https://textflow.me"
+repository = "https://github.com/Skocimis/textflow-python"
+keywords = ["api", "sms", "api-client", "sms-api", "text-message", "simple-sms", "sms-verification"]
 dependencies = [
   "requests"
 ]
-authors = [
-  { name="Textflow", email="admin@textflow.me" },
-]
-description = "TextFlow"
-readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.6"
 classifiers = [
-    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-
-[project.urls]
-"Homepage" = "https://textflow.me"

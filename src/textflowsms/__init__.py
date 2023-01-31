@@ -10,8 +10,6 @@ class SendMessageData:
         self.timestamp:int = obj["timestamp"]
     def __str__(self) -> str:
         return json.dumps(self.__dict__)
-    def toJson(self):
-        return json.dumps(self.__dict__)
 
 class SendMessageResult:
     def __init__(self, obj):
@@ -21,9 +19,7 @@ class SendMessageResult:
         if(self.ok):
             self.data:SendMessageData = SendMessageData(obj["data"])
     def __str__(self) -> str:
-        return json.dumps(self.__dict__)
-    def toJson(self):
-        return json.dumps(self.__dict__)
+        return json.dumps(self.__dict__, default=vars)
 
 
 apiKey:str = ""
@@ -65,7 +61,7 @@ def sendSMS(recipient:str, text:str)->SendMessageResult:
     if(len(text) == 0):
         return dict(ok=False, status=400, message="You have not specified the message body. ")
     if(len(apiKey) == 0):
-        return dict(ok=False, status=400, message="")
+        return dict(ok=False, status=400, message="You have not specified the API key. ")
     data = json.dumps(dict(recipient=recipient, text=text, apiKey=apiKey))
     r = requests.post(
         url="https://textflow.me/messages/send",

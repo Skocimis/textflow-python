@@ -1,6 +1,8 @@
 import src.textflowsms as tf
 
-tf.useKey("a8c9H5AMVqeiW6lUHNYia4yb9RZObMyUmWDI2GJeaol9R177Ng45F4yfOg4856w")
+tf.useKey("UnndUImcIDysu03nSW1uSQvKxzoOaPbmSiqaKHczEvA51D6Dw3Rx0x5G5DjzyUJ6")
 
-result = tf.sendSMS("+381611231234", "Dummy message text...")
-print(result)
+result = tf.sendVerificationSMS("+381690156360")
+print(result.data.verification_code)
+coderesult = tf.verifyCode("+381690156360", result.data.verification_code)
+print(coderesult.valid)

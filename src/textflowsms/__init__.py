@@ -97,7 +97,7 @@ def sendSMS(phone_number:str, text:str)->SendMessageResult:
         return dict(ok=False, status=400, message="You have not specified the message body. ")
     if(len(apiKey) == 0):
         return dict(ok=False, status=400, message="You have not specified the API key. ")
-    data = dict(phone_number=phone_number, text=text, test=True)
+    data = dict(phone_number=phone_number, text=text)
     
     r = requests.post(
         url="https://textflow.me/api/send-sms",
@@ -146,7 +146,7 @@ def sendVerificationSMS(phone_number:str, service_name:str = "", seconds:int = 6
         return dict(ok=False, status=400, message="You have not specified the recipient phone number. ")
     if(len(apiKey) == 0):
         return dict(ok=False, status=400, message="You have not specified the API key. ")
-    data = dict(phone_number=phone_number, service_name=service_name, seconds = seconds, test=True)
+    data = dict(phone_number=phone_number, service_name=service_name, seconds = seconds)
     
     r = requests.post(
         url="https://textflow.me/api/send-code",
@@ -193,7 +193,7 @@ def verifyCode(phone_number:str, code:str)->VerifyCodeResult:
         return dict(ok=False, status=400, message="You have not specified the recipient phone number. ", valid=False)
     if(len(apiKey) == 0):
         return dict(ok=False, status=400, message="You have not specified the API key. ", valid=False)
-    data = dict(phone_number=phone_number, code=code, test=True)
+    data = dict(phone_number=phone_number, code=code)
     
     r = requests.post(
         url="https://textflow.me/api/verify-code",

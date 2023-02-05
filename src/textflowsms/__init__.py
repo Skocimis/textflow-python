@@ -128,12 +128,12 @@ def sendVerificationSMS(phone_number:str, service_name:str = "", seconds:int = 6
 
     ```python
     #User has sent his phone number for verification
-    textflow.sendVerificationSMS(phone_number)
+    tf.sendVerificationSMS(phone_number)
 
     #Show him the code submission form
     #The user has submitted the code
 
-    res = textflow.verifyCode(phone_number, code)
+    res = tf.verifyCode(phone_number, code)
     if res.valid:
         print("Real user")
     
@@ -178,7 +178,7 @@ def verifyCode(phone_number:str, code:str)->VerifyCodeResult:
     # and the user has submitted the code
     # that now needs to be verified
 
-    res = textflow.verifyCode(phone_number, code)
+    res = tf.verifyCode(phone_number, code)
     if res.valid:
         print("Real user")
     

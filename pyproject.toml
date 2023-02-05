@@ -13,7 +13,7 @@ authors = [
 readme = "README.md"
 homepage = "https://textflow.me"
 repository = "https://github.com/Skocimis/textflow-python"
-keywords = ["api", "sms", "api-client", "sms-api", "text-message", "simple-sms", "sms-verification"]
+keywords = ["api", "sms", "api-client", "sms-api", "text-message", "simple-sms", "sms-verification", "user-verification"]
 dependencies = [
   "requests"
 ]

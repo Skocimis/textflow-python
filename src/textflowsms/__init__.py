@@ -88,7 +88,7 @@ def sendSMS(phone_number:str, text:str)->SendMessageResult:
 
     >>> import textflow as tf
     >>> tf.useKey("YOUR_API_KEY")
-    >>> tf.sendSMS(recipient="+3811231234", text="Message text...")
+    >>> tf.sendSMS("+11234567890", text="Message text...")
     """
     global apiKey
     if(len(phone_number) == 0):

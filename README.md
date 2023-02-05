@@ -17,7 +17,7 @@ This library supports the following Python implementations:
 ## Installation
 `pip install textflowsms`
 
-## Sample Usage
+## Sending an SMS
 
 To send an SMS, you have to create an API key using the [Textflow dashboard](https://textflow.me/api). When you register an account, you automatically get an API key with one free SMS which you can send anywhere.
 
@@ -66,6 +66,30 @@ else:
     "message": "API key not found"
 }
 ```
+
+## Verifying a phone number
+
+You can also use our service to easily verify a phone number, without storing data about the phones that you are about to verify, because we can do it for you.
+
+### Example usage
+
+```python
+# User has sent his phone number for verification
+resultSMS = tf.sendVerificationSMS ("+11234567890", service_name, seconds);
+
+# Show him the code submission form
+# We will handle the verification code ourselves
+
+# The user has submitted the code
+resultCode = tf.VerifyCode("+11234567890", user_entered_code);
+# if `resultCode.valid` is True, then the phone number is verified. 
+```
+
+#### Verification options
+
+`service_name` is what the user will see in the verification message, e. g. `"Your verification code for Guest is: CODE"`
+
+`seconds` is how many seconds the code is valid. Default is 10 minutes. Maximum is one day. 
 
 ## Getting help
 
